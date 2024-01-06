@@ -1,0 +1,63 @@
+[tool.poetry]
+name = "fastapi-practice"
+version = "0.1.0"
+description = ""
+authors = ["JiHongKim98 <kinjihong9598@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+fastapi = {extras = ["all"], version = "^0.109.0"}
+uvicorn = "^0.25.0"
+pydantic = "^2.5.3"
+sqlalchemy = "^2.0.25"
+sqlmodel = "^0.0.14"
+pytest = "^7.4.4"
+pytest-asyncio = "^0.23.3"
+pydantic-settings = "^2.1.0"
+alembic = "^1.13.1"
+psycopg2 = "^2.9.9"
+psycopg2-binary = "^2.9.9"
+asyncpg = "^0.29.0"
+pre-commit = "^3.6.0"
+ruff = "^0.1.12"
+mypy = "^1.8.0"
+passlib = {extras = ["argon2", "bcrypt"], version = "^1.7.4"}
+pyjwt = {extras = ["crypto"], version = "^2.8.0"}
+pytz = "^2023.3.post1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+
+[tool.ruff]
+exclude = [
+    ".git",
+    "venv",
+    ".pytest_cache",
+    "ruff_cache",
+    "alembic",
+]
+line-length = 88
+indent-width = 4
+target-version = "py311"
+select = [
+    "E",
+    "W",
+    "F",
+    "I",
+    "B",
+    "C4",
+    "UP",
+]
+ignore = [
+    "E501",
+    "B008",
+    "W191",
+]
+
+[tool.mypy]
+python_version = "3.11"
+no_namespace_packages = true
+no_strict_optional = true
